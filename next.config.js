@@ -1,41 +1,40 @@
-const withMDX = require("@next/mdx")({
-  extension: /\.mdx$/,
-});
+const { withPlausibleProxy } = require("next-plausible");
+const { withNextBanner } = require("next-banner");
 
-module.exports = withMDX({
-  pageExtensions: ["js", "jsx", "mdx"],
-  future: {
-    webpack5: true,
+module.exports = withNextBanner({
+  nextBanner: {
+    domain: "https://" + process.env.NEXT_PUBLIC_VERCEL_URL,
   },
-  async redirects() {
-    return [
-      {
-        source: "/asd",
-        destination: "/autism",
-        permanent: false,
-      },
-      {
-        source: "/aspergers",
-        destination: "/autism",
-        permanent: false,
-      },
-      {
-        source: "/bp",
-        destination: "/bipolar",
-        permanent: false,
-      },
-    ];
-  },
-  async rewrites() {
-    return [
-      {
-        source: "/js/script.js",
-        destination: "https://plausible.io/js/plausible.outbound-links.js",
-      },
-      {
-        source: "/api/event",
-        destination: "https://plausible.io/api/event",
-      },
-    ];
-  },
+  ...withPlausibleProxy()({
+    pageExtensions: ["js", "jsx", "mdx", "tsx", "ts"],
+    async redirects() {
+      return [
+        {
+          source: "/asd",
+          destination: "/autism",
+          permanent: false,
+        },
+        {
+          source: "/aspergers",
+          destination: "/autism",
+          permanent: false,
+        },
+        {
+          source: "/bp",
+          destination: "/bipolar",
+          permanent: false,
+        },
+        {
+          source: "/mpd",
+          destination: "/did",
+          permanent: false,
+        },
+        {
+          source: "/anxietydisorder",
+          destination: "/anxiety",
+          permanent: false,
+        },
+      ];
+    },
+  }),
 });

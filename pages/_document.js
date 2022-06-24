@@ -10,39 +10,45 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta name="theme-color" content="#D49DFF"></meta>
+          <meta name="theme-color" content="#860091"></meta>
 
-          <link rel="icon" href="/favicons/favicon.ico"></link>
+          <link rel="apple-touch-icon" href="/favicons/favicon-180x180.png"></link>
           <link
             rel="icon"
             type="image/png"
-            href="/favicons/favicon-16x16.png"
             sizes="16x16"
+            href="/favicons/favicon-16x16.png"
           ></link>
           <link
             rel="icon"
             type="image/png"
-            href="/favicons/favicon-32x32.png"
             sizes="32x32"
+            href="/favicons/favicon-32x32.png"
           ></link>
           <link
             rel="icon"
             type="image/png"
-            href="/favicons/favicon-96x96.png"
             sizes="96x96"
+            href="/favicons/favicon-96x96.png"
           ></link>
           <link
             rel="icon"
             type="image/png"
-            href="/favicons/favicon-192x192.png"
             sizes="192x192"
+            href="/favicons/favicon-192x192.png"
           ></link>
+          <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico"></link>
 
-          <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+          <meta name="monetization" content="$ilp.uphold.com/yGGixMZQUePn"></meta>
+
+          <link href="https://rsms.me/inter/inter.css" rel="stylesheet"></link>
+
           <link
-            href="https://fonts.googleapis.com/css2?family=Cabin:wght@600&family=Inter:wght@400;600&display=swap"
-            rel="stylesheet"
-          ></link>
+            rel="sitemap"
+            type="application/xml"
+            title="Sitemap"
+            href="/sitemap.xml"
+          />
         </Head>
         <body>
           <Main />
